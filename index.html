@@ -4,41 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>지하철 전광판</title>
-  <style>
-    #root {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    .marquee {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .marquee span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 10s linear infinite;
-      font-size: 54px;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(100%);
-      }
-
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="root">
@@ -46,27 +12,8 @@
       <span id="next-station">다음 역은 강남입니다</span>
     </div>
   </div>
-  <script>
+  <script src="script.ts">
     const root = document.getElementById("root");
-    const stations = [
-      "다음 역은 강남입니다",
-      "다음 역은 역삼입니다",
-      "다음 역은 선릉입니다",
-      "다음 역은 삼성입니다"
-    ];
-
-    let index = 0;
-    function updateStation() {
-      const nextStationElement = document.getElementById('next-station');
-      nextStationElement.textContent = stations[index];
-      index = (index + 1) % stations.length;
-    }
-
-    // 초기 업데이트
-    updateStation();
-
-    // 10초마다 업데이트
-    setInterval(updateStation, 10000);
   </script>
 </body>
 </html>
