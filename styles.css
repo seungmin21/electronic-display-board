@@ -4,30 +4,33 @@
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: black;
+  background-color: #333; /* 어두운 회색 배경 */
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 .marquee {
-  width: 100%;
+  width: 90%; /* 화면 크기의 90% */
+  max-width: 800px; /* 최대 너비 800px */
+  border: 5px solid #00ff00; /* 밝은 초록색 테두리 */
+  background-color: black; /* 전광판 배경색 */
   overflow: hidden;
   white-space: nowrap;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* 밝은 초록색 외곽선 */
+  padding: 10px; /* 내부 여백 */
 }
 
 .marquee span {
   display: inline-block;
   padding-left: 100%;
   animation: marquee 10s linear infinite;
-  font-size: 54px;
+  font-size: 54px; /* 글씨 크기 */
+  font-weight: bold; /* 글씨 두께 */
+  color: #00ff00; /* 전광판 글씨 색상 (밝은 초록색) */
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* 밝은 초록색 글씨 외곽선 */
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
